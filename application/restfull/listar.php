@@ -10,4 +10,8 @@ foreach ($con->query("SELECT * FROM autor ORDER BY `id`", PDO::FETCH_OBJ) as $ob
 	$dados[] = $obj;
 }
 
-echo json_encode($dados);
+$conteudo = json_encode($dados);
+
+if (isset($_REQUEST['callback'])) {
+	$conteudo = $_REQUEST['callback'] . '(' . $conteudo . ')';
+} 
