@@ -14,4 +14,7 @@ $conteudo = json_encode($dados);
 
 if (isset($_REQUEST['callback'])) {
 	$conteudo = $_REQUEST['callback'] . '(' . $conteudo . ')';
-} 
+}
+
+echo $conteudo;
+?>
